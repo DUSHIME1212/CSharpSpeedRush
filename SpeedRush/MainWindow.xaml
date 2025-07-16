@@ -1,0 +1,39 @@
+﻿<Window x:Class="SpeedRush.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="C# Speed Rush" Height="400" Width="600">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0 0 0 10">
+            <TextBlock Text="Select Car:" VerticalAlignment="Center" Margin="0 0 10 0"/>
+            <ComboBox x:Name="CarSelector" Width="150" SelectionChanged="CarSelector_SelectionChanged"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 10">
+            <Label Content="Lap:"/>
+            <TextBlock x:Name="LapDisplay" Width="50"/>
+            <Label Content="Fuel:" Margin="20 0 0 0"/>
+            <ProgressBar x:Name="FuelBar" Width="100" Height="20" Minimum="0" Maximum="100"/>
+            <TextBlock x:Name="FuelDisplay" Width="50" Margin="5 0 0 0"/>
+            <Label Content="Time Left:" Margin="20 0 0 0"/>
+            <ProgressBar x:Name="TimeBar" Width="100" Height="20" Minimum="0" Maximum="120"/>
+            <TextBlock x:Name="TimeDisplay" Width="50" Margin="5 0 0 0"/>
+            <Label Content="Speed:" Margin="20 0 0 0"/>
+            <TextBlock x:Name="SpeedDisplay" Width="50"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="BtnSpeedUp" Content="Speed Up" Width="80" Margin="5" Click="BtnSpeedUp_Click"/>
+                <Button x:Name="BtnMaintain" Content="Maintain Speed" Width="110" Margin="5" Click="BtnMaintain_Click"/>
+                <Button x:Name="BtnPitStop" Content="Pit Stop" Width="80" Margin="5" Click="BtnPitStop_Click"/>
+            </StackPanel>
+            <TextBlock x:Name="ProgressIndicator" FontSize="18" Margin="10" Text="[==>]"/>
+            <ListBox x:Name="RaceLogBox" Height="120"/>
+        </StackPanel>
+    </Grid>
+</Window>
