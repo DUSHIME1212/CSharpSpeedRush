@@ -91,5 +91,23 @@ namespace SpeedRush.Models
                 RaceLog.Enqueue(status);
             }
         }
+
+        /// <summary>
+        /// Advances the race time by the specified delta in seconds.
+        /// </summary>
+        /// <param name="deltaTime">Time to advance in seconds.</param>
+        public void AdvanceTime(double deltaTime)
+        {
+            if (IsRaceOver)
+                return;
+
+            TimeElapsed += deltaTime;
+
+            if (CurrentLap > RaceTrack.TotalLaps || SelectedCar.CurrentFuel <= 0 || TimeElapsed >= TimeLimit)
+            {
+                IsRaceOver = true;
+                RaceLog.Enqueue("Race finished!");
+            }
+        }
     }
 }
