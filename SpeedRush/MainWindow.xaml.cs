@@ -15,26 +15,26 @@ namespace SpeedRush
         {
             InitializeComponent();
 
-            // Initialize cars list with sample cars
+            
             cars = new List<Car>
             {
-                new Car("Speedster", 200, 0.1, 50),
+                new Car("Speedster", 200, 12.1, 50),
                 new Car("Thunderbolt", 180, 0.08, 60),
                 new Car("Lightning", 220, 0.12, 45)
             };
 
-            // Initialize track
+            
             track = new Track();
 
-            // Initialize race manager with the first car and track
+            
             raceManager = new RaceManager(cars[0], track);
 
-            // Populate CarSelector ComboBox
+            
             CarSelector.ItemsSource = cars;
             CarSelector.DisplayMemberPath = "Name";
             CarSelector.SelectedIndex = 0;
 
-            // Setup timer for continuous time progression
+            
             var timer = new System.Windows.Threading.DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(1);
             timer.Tick += Timer_Tick;
@@ -47,7 +47,7 @@ namespace SpeedRush
         {
             if (!raceManager.IsRaceOver)
             {
-                raceManager.AdvanceTime(0.01); // advance time by 0.01 seconds (10 ms)
+                raceManager.AdvanceTime(0.01); 
                 UpdateUI();
             }
         }
@@ -106,7 +106,7 @@ namespace SpeedRush
 
             TimeBar.Maximum = raceManager.TimeLimit;
 
-            // Animate TimeBar.Value smoothly
+            
             var animation = new System.Windows.Media.Animation.DoubleAnimation
             {
                 To = raceManager.TimeElapsed,

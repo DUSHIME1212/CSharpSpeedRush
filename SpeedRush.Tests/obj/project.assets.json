@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {
+    "net9.0-windows7.0": {
       "Microsoft.ApplicationInsights/2.22.0": {
         "type": "package",
         "dependencies": {
@@ -684,6 +684,19 @@
             "related": ".xml"
           }
         }
+      },
+      "SpeedRush/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/SpeedRush.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SpeedRush.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
       }
     }
   },
@@ -1643,12 +1656,18 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "SpeedRush/1.0.0": {
+      "type": "project",
+      "path": "../SpeedRush/SpeedRush.csproj",
+      "msbuildProject": "../SpeedRush/SpeedRush.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "net9.0": [
+    "net9.0-windows7.0": [
       "MSTest >= 3.6.4",
-      "Microsoft.NET.Test.Sdk >= 17.12.0"
+      "Microsoft.NET.Test.Sdk >= 17.12.0",
+      "SpeedRush >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1658,11 +1677,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\don360\\Desktop\\CSharpSpeedRush\\SpeedRush.Tests\\SpeedRush.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\don360\\Desktop\\csharp\\CSharpSpeedRush\\SpeedRush.Tests\\SpeedRush.Tests.csproj",
       "projectName": "SpeedRush.Tests",
-      "projectPath": "C:\\Users\\don360\\Desktop\\CSharpSpeedRush\\SpeedRush.Tests\\SpeedRush.Tests.csproj",
+      "projectPath": "C:\\Users\\don360\\Desktop\\csharp\\CSharpSpeedRush\\SpeedRush.Tests\\SpeedRush.Tests.csproj",
       "packagesPath": "C:\\Users\\don360\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\don360\\Desktop\\CSharpSpeedRush\\SpeedRush.Tests\\obj\\",
+      "outputPath": "C:\\Users\\don360\\Desktop\\csharp\\CSharpSpeedRush\\SpeedRush.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1673,16 +1692,20 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net9.0"
+        "net9.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "projectReferences": {}
+        "net9.0-windows7.0": {
+          "targetAlias": "net9.0-windows",
+          "projectReferences": {
+            "C:\\Users\\don360\\Desktop\\csharp\\CSharpSpeedRush\\SpeedRush\\SpeedRush.csproj": {
+              "projectPath": "C:\\Users\\don360\\Desktop\\csharp\\CSharpSpeedRush\\SpeedRush\\SpeedRush.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -1698,8 +1721,8 @@
       "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net9.0": {
-        "targetAlias": "net9.0",
+      "net9.0-windows7.0": {
+        "targetAlias": "net9.0-windows",
         "dependencies": {
           "MSTest": {
             "target": "Package",

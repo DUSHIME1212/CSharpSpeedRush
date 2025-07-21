@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace SpeedRush.Models
 {
-    /// <summary>
-    /// Manages race state, player actions, and game progression.
-    /// </summary>
+    
+    
+    
     public class RaceManager
     {
         public Car SelectedCar { get; private set; }
@@ -13,7 +13,7 @@ namespace SpeedRush.Models
         public int CurrentLap { get; private set; }
         public double TimeElapsed { get; private set; }
         public double TimeLimit { get; private set; }
-        public double LapProgress { get; private set; } // 0 to 100%
+        public double LapProgress { get; private set; } 
         public bool IsRaceOver { get; private set; }
         public Queue<string> RaceLog { get; private set; }
 
@@ -29,10 +29,10 @@ namespace SpeedRush.Models
             RaceLog = new Queue<string>();
         }
 
-        /// <summary>
-        /// Processes the player's action for the turn.
-        /// </summary>
-        /// <param name="action">The action chosen by the player.</param>
+        
+        
+        
+        
         public void ProcessTurn(PlayerAction action)
         {
             if (IsRaceOver)
@@ -71,7 +71,7 @@ namespace SpeedRush.Models
             if (action != PlayerAction.PitStop)
                 SelectedCar.ConsumeFuel(fuelRateMultiplier);
 
-            LapProgress += speed * timeTaken / (RaceTrack.LapLength * 100); // Simulate progress as %
+            LapProgress += speed * timeTaken / (RaceTrack.LapLength * 100); 
             TimeElapsed += timeTaken;
 
             if (LapProgress >= 1.0)
@@ -92,10 +92,10 @@ namespace SpeedRush.Models
             }
         }
 
-        /// <summary>
-        /// Advances the race time by the specified delta in seconds.
-        /// </summary>
-        /// <param name="deltaTime">Time to advance in seconds.</param>
+        
+        
+        
+        
         public void AdvanceTime(double deltaTime)
         {
             if (IsRaceOver)
