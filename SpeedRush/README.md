@@ -22,3 +22,5 @@ Unit tests are provided in the `SpeedRush.Tests` project. Run via Test Explorer 
 
 ## Video Demo
 
+https://github.com/user-attachments/assets/2ecd8c5a-dd09-4439-9d6b-e8625377103c
+
